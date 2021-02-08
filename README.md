@@ -2,15 +2,17 @@
 
 <p align="center">
 <img alt="api" src="https://img.shields.io/badge/API-21%2B-green?logo=android"/>
-<img alt="build" src=""/>
+<img alt="build" src="https://img.shields.io/github/workflow/status/hongbeomi/Blueprint/Android%20CI?color=darkgreen"/>
 <img alt="license" src="https://img.shields.io/github/license/hongbeomi/Blueprint?color=blue&logo=apache"/>
 </p>
 
 <p align="center">🎥 A library that lets you view blueprints on a one-screen basis.</p>
 
+ <img src="" align="center" width="40%"></img> 
+
 <br/>
 
-## How to use?
+## 🚀 How to use?
 
 ### Gradle
 
@@ -33,6 +35,18 @@ And add a this code to your **module**'s `build.gradle` file.
 dependencies {
     implementation 'com.github.hongbeomi:Blueprint:Tag'
 }
+```
+
+<br/>
+
+## 👀 Usage
+
+```kotlin
+// set context, target rootView
+val inspectorDialog = InspectorDialog(this, rootView)
+
+// show
+inspectorDialog.show()
 ```
 
 <br/>
