@@ -8,7 +8,7 @@
 
 <p align="center">🎥 A library that lets you view blueprints on a one-screen basis.</p>
 
- <img src="" align="center" width="40%"></img> 
+ <img src="https://github.com/hongbeomi/Blueprint/blob/master/sample/sample_video.gif" align="center" width="40%"></img> 
 
 <br/>
 
