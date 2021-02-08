@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<github.hongbeomi.library.InspectorView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/inspectorView_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent" >
+
+    <ImageButton
+        android:id="@+id/imageButton_inspector_dialog_close"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/ic_close_frame_48"/>
+
+</github.hongbeomi.library.InspectorView>
