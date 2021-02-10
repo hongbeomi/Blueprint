@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.drawToBitmap
 import java.util.*
 import kotlin.collections.HashMap
+import kotlin.collections.LinkedHashMap
 
 class InspectorView
 @JvmOverloads
@@ -107,20 +109,20 @@ constructor(
 
     fun moveFromQueueToStack() {
         mQueue.forEach loop@{ q ->
-                if (mStack.isEmpty()) {
-                    mStack.add(q.first to mutableListOf(q.second))
-                    return@loop
-                }
-                if (mStack.peek().first != q.first) {
-                    mStack.add(q.first to mutableListOf(q.second))
+            if (mStack.isEmpty()) {
+                mStack.add(q.first to mutableListOf(q.second))
+                return@loop
+            }
+            if (mStack.peek().first != q.first) {
+                mStack.add(q.first to mutableListOf(q.second))
+            } else {
+                if (!isExistLayoutIntersect(mStack.peek().second, q.second)) {
+                    mStack.peek().second.add(q.second)
                 } else {
-                    if (!isExistLayoutIntersect(mStack.peek().second, q.second)) {
-                        mStack.peek().second.add(q.second)
-                    } else {
-                        mStack.add(q.first to mutableListOf(q.second))
-                    }
+                    mStack.add(q.first to mutableListOf(q.second))
                 }
             }
+        }
         drawContainerView()
     }
 
